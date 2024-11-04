@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>  Dashboards  | Enopoly Commerce</title>
 <!-- App favicon -->
-<link rel="shortcut icon" href="assets/images/favicon.ico">
+<link rel="shortcut icon" href="https://app.enopolyautomation.com/assets/images/favicon.ico">
   <!-- Bootstrap Css -->
 <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
 <!-- Icons Css -->
@@ -15,43 +15,6 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<style> 
-    /* In app.css */
-:root {
-    /* Light mode variables */
-    --bg-color: #ffffff;
-    --text-color: #000000;
-}
-
-.dark {
-    /* Dark mode variables */
-    --bg-color: #000000;
-    --text-color: #ffffff;
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
-</style>
-<style> 
-  /* Basic body styles */
-body {
-    background-color: white; /* Default background */
-    color: black; /* Default text color */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-}
-
-/* Dark mode styles */
-body[data-layout-mode="dark"] {
-    background-color: #121212; /* Dark background */
-    color: white; /* Light text color */
-}
-
-</style>
-
-
 
 <script>
         // Immediately apply dark mode if preferred
@@ -59,12 +22,17 @@ body[data-layout-mode="dark"] {
             document.documentElement.classList.add('dark');
         }
     </script>
+    <link href="assets/css/apas.css" rel="stylesheet">
+
+
+
+
 @stack('styles')
     
     @livewireStyles
     
 </head>
-<body data-sidebar="dark" data-layout-mode="light" >
+<body data-sidebar="dark" data-layout-mode="{{ Route::currentRouteName() == 'login' ? 'light' : 'dark'}}" >
 
 
   {{ $slot }}
@@ -88,13 +56,51 @@ body[data-layout-mode="dark"] {
 
 <script src="assets/js/app.js"></script>
 
+ 
+
 
 <script>
-        function toggleDarkMode() {
-            const isDarkMode = document.documentElement.classList.toggle('dark');
-            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-        }
-    </script> 
+
+    // Immediately apply dark mode and set icon based on stored theme preference
+if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.classList.add('dark');
+    document.getElementById("darkIcon").style.display = "inline";
+    document.getElementById("lightIcon").style.display = "none";
+} else {
+    document.getElementById("darkIcon").style.display = "none";
+    document.getElementById("lightIcon").style.display = "inline";
+}
+
+function toggleDarkMode() {
+    // Toggle dark mode on the <html> element
+    const isDarkMode = document.documentElement.classList.toggle('dark');
+
+    // Update localStorage to remember theme preference
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+
+    // Toggle icon visibility
+    const darkIcon = document.getElementById("darkIcon");
+    const lightIcon = document.getElementById("lightIcon");
+
+    if (isDarkMode) {
+        darkIcon.style.display = "inline";
+        lightIcon.style.display = "none";
+    } else {
+        darkIcon.style.display = "none";
+        lightIcon.style.display = "inline";
+    }
+
+    // Add animation to the visible icon
+    const activeIcon = isDarkMode ? darkIcon : lightIcon;
+    activeIcon.classList.add("active");
+
+    // Remove the animation class after it ends
+    activeIcon.addEventListener("animationend", () => {
+        activeIcon.classList.remove("active");
+    }, { once: true });
+}
+
+    </script>
 @stack('scripts')
 
     @livewireScripts

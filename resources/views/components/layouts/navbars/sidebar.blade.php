@@ -10,17 +10,11 @@
                 <li class="menu-title" key="t-menu">Menu</li>
 
                 <li class="{{ Route::currentRouteName() == 'dashboard' ? 'mm-active' : 'text-light fw-bold' }}">
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                    <a wire:navigate href="{{ route('dashboard') }}">
                         <i class="bx bx-home-circle"></i>
                         <span key="t-dashboards">Dashboards</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a wire:navigate href="{{ route('dashboard') }}" >Dashboard</a></li>
-                        <li><a href="dashboard-saas.html" key="t-saas">Saas</a></li>
-                        <li><a href="dashboard-crypto.html" key="t-crypto">Crypto</a></li>
-                        <li><a href="dashboard-blog.html" key="t-blog">Blog</a></li>
-                        <li><a href="dashboard-job.html"><span class="badge rounded-pill text-bg-success float-end" key="t-new">New</span> <span key="t-jobs">Jobs</span></a></li>
-                    </ul>
+                 
                 </li>
 
                 <li>
@@ -56,7 +50,7 @@
                     </ul>
                 </li>
 
-                <li class="menu-title" key="t-apps">Apps</li>
+                <li class="menu-title" key="t-apps">Records</li>
 
                 
 
