@@ -273,23 +273,14 @@
                     </div>
                 </div>
             </div>
-            
-    <div class="dropdown d-none d-lg-inline-block ms-1">
-    
-  
-    <div class="form-check form-switch mb-3 header-item noti-icon waves-effect">
-        <input class="form-check-input theme-choice" type="checkbox" id="theme-toggle">
-        <label class="form-check-label" for="theme-toggle">
-            <i id="lightIcon" class="fas fa-sun" style="display: inline;"></i>
-            <i id="darkIcon" class="fas fa-moon" style="display: none;"></i> 
-        </label>
-    </div>
-   
 
-
-
-
-</div>
+            <div class="dropdown d-none d-lg-inline-block ms-1">
+            <button onclick="toggleDarkMode()"  class="btn header-item noti-icon waves-effect">Toggle Dark Mode</button>
+                    <i class="bx bx-fullscreen"></i>
+                </button>
+            </div>
+           
+ 
 
             <div class="dropdown d-none d-lg-inline-block ms-1">
                 <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">

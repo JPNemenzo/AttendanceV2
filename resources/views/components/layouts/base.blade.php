@@ -15,7 +15,26 @@
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style> 
+    /* In app.css */
+:root {
+    /* Light mode variables */
+    --bg-color: #ffffff;
+    --text-color: #000000;
+}
 
+.dark {
+    /* Dark mode variables */
+    --bg-color: #000000;
+    --text-color: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+</style>
 <style> 
   /* Basic body styles */
 body {
@@ -34,6 +53,12 @@ body[data-layout-mode="dark"] {
 
 
 
+<script>
+        // Immediately apply dark mode if preferred
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
 @stack('styles')
     
     @livewireStyles
@@ -65,55 +90,11 @@ body[data-layout-mode="dark"] {
 
 
 <script>
- function initSettings() {
-    const themeToggle = document.getElementById("theme-toggle");
-    const lightIcon = document.getElementById("lightIcon");
-    const darkIcon = document.getElementById("darkIcon");
-    const body = document.body;
-
-    // Check for user's preference in sessionStorage
-    const alreadyVisited = sessionStorage.getItem("is_visited");
-
-    if (alreadyVisited === "dark-mode") {
-        // Apply dark mode
-        themeToggle.checked = true; // Set toggle to checked for dark mode
-        darkIcon.style.display = "inline"; // Show dark icon
-        lightIcon.style.display = "none"; // Hide light icon
-        body.classList.add("dark-mode"); // Add dark mode class to body
-        body.setAttribute("data-layout-mode", "dark"); // Update layout mode to dark
-    } else {
-        // Default to light mode
-        themeToggle.checked = false; // Set toggle to unchecked for light mode
-        darkIcon.style.display = "none"; // Hide dark icon
-        lightIcon.style.display = "inline"; // Show light icon
-        body.classList.remove("dark-mode"); // Remove dark mode class from body
-        body.setAttribute("data-layout-mode", "light"); // Update layout mode to light
-    }
-
-    themeToggle.addEventListener("change", function() {
-        if (this.checked) {
-            // Dark Mode
-            darkIcon.style.display = "inline"; // Show dark icon
-            lightIcon.style.display = "none"; // Hide light icon
-            body.classList.add("dark-mode"); // Add dark mode class to body
-            body.setAttribute("data-layout-mode", "dark"); // Update layout mode to dark
-            sessionStorage.setItem("is_visited", "dark-mode"); // Store preference
-        } else {
-            // Light Mode
-            darkIcon.style.display = "none"; // Hide dark icon
-            lightIcon.style.display = "inline"; // Show light icon
-            body.classList.remove("dark-mode"); // Remove dark mode class from body
-            body.setAttribute("data-layout-mode", "light"); // Update layout mode to light
-            sessionStorage.setItem("is_visited", "light-mode"); // Store preference
+        function toggleDarkMode() {
+            const isDarkMode = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
         }
-    });
-}
-
-// Initialize settings on page load
-document.addEventListener("DOMContentLoaded", initSettings);
-
-
-</script>
+    </script> 
 @stack('scripts')
 
     @livewireScripts
