@@ -32,7 +32,7 @@
     @livewireStyles
     
 </head>
-<body data-sidebar="dark" data-layout-mode="{{ Route::currentRouteName() == 'login' ? 'light' : 'dark'}}" >
+<body data-sidebar="dark" data-layout-mode="light" >
 
 
   {{ $slot }}

@@ -17,59 +17,43 @@
                  
                 </li>
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-layout"></i>
-                        <span key="t-layouts">Layouts</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="true">
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow" key="t-vertical">Vertical</a>
-                            <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="layouts-light-sidebar.html" key="t-light-sidebar">Light Sidebar</a></li>
-                                <li><a href="layouts-compact-sidebar.html" key="t-compact-sidebar">Compact Sidebar</a></li>
-                                <li><a href="layouts-icon-sidebar.html" key="t-icon-sidebar">Icon Sidebar</a></li>
-                                <li><a href="layouts-boxed.html" key="t-boxed-width">Boxed Width</a></li>
-                                <li><a href="layouts-preloader.html" key="t-preloader">Preloader</a></li>
-                                <li><a href="layouts-colored-sidebar.html" key="t-colored-sidebar">Colored Sidebar</a></li>
-                                <li><a href="layouts-scrollable.html" key="t-scrollable">Scrollable</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow" key="t-horizontal">Horizontal</a>
-                            <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="layouts-horizontal.html" key="t-horizontal">Horizontal</a></li>
-                                <li><a href="layouts-hori-topbar-light.html" key="t-topbar-light">Topbar light</a></li>
-                                <li><a href="layouts-hori-boxed-width.html" key="t-boxed-width">Boxed width</a></li>
-                                <li><a href="layouts-hori-preloader.html" key="t-preloader">Preloader</a></li>
-                                <li><a href="layouts-hori-colored-header.html" key="t-colored-topbar">Colored Header</a></li>
-                                <li><a href="layouts-hori-scrollable.html" key="t-scrollable">Scrollable</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                
 
                 <li class="menu-title" key="t-apps">Records</li>
 
-                
-
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-calendar"></i>
-                        <span key="t-dashboards">Calendars</span>
+                        <i class="bx bx-group"></i>
+                        <span key="t-employee">Employee</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="calendar.html" key="t-tui-calendar">TUI Calendar</a></li>
-                        <li><a href="calendar-full.html" key="t-full-calendar">Full Calendar</a></li>
+                        <li><a href="#" key="t-employee">Employee Records</a></li>
+                        <li><a href="employee-product-detail.html" key="t-product-detail">Add Employee</a></li>
+                        <!-- <li><a href="employee-orders.html" key="t-orders">Orders</a></li>
+                        <li><a href="employee-customers.html" key="t-customers">Customers</a></li>
+                        <li><a href="employee-cart.html" key="t-cart">Cart</a></li>
+                        <li><a href="employee-checkout.html" key="t-checkout">Checkout</a></li>
+                        <li><a href="employee-shops.html" key="t-shops">Shops</a></li>
+                        <li><a href="employee-add-product.html" key="t-add-product">Add Product</a></li> -->
                     </ul>
                 </li>
+                
 
                 <li>
                     <a href="chat.html" class="waves-effect">
                         <i class="bx bx-chat"></i>
                         <span key="t-chat">Chat</span>
                     </a>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-calendar"></i>
+                        <span key="t-dashboards">Attendance</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="calendar.html" key="t-tui-calendar">TUI Calendar</a></li>
+                        <li><a href="calendar-full.html" key="t-full-calendar">Full Calendar</a></li>
+                    </ul>
                 </li>
 
                 <li>
@@ -79,22 +63,7 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-store"></i>
-                        <span key="t-ecommerce">Ecommerce</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="ecommerce-products.html" key="t-products">Products</a></li>
-                        <li><a href="ecommerce-product-detail.html" key="t-product-detail">Product Detail</a></li>
-                        <li><a href="ecommerce-orders.html" key="t-orders">Orders</a></li>
-                        <li><a href="ecommerce-customers.html" key="t-customers">Customers</a></li>
-                        <li><a href="ecommerce-cart.html" key="t-cart">Cart</a></li>
-                        <li><a href="ecommerce-checkout.html" key="t-checkout">Checkout</a></li>
-                        <li><a href="ecommerce-shops.html" key="t-shops">Shops</a></li>
-                        <li><a href="ecommerce-add-product.html" key="t-add-product">Add Product</a></li>
-                    </ul>
-                </li>
+                
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">

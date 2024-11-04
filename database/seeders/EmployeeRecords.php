@@ -21,7 +21,7 @@ class EmployeeRecords extends Seeder
             [
               
                 'company_id'=> 1,
-                'first_name'=> 'jesrael',
+                'first_name'=> 'Jesrael',
                 'last_name'=> 'Escaran',
                 'middle_name'=> 'D.',
                 'suffix'=> '1',
